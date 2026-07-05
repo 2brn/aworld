@@ -1,6 +1,6 @@
-# ArduPilot Hold Altitude Demo
+# ArduPilot AltHold Demo
 
-Docker-based demo that runs ArduCopter SITL and a Python controller using `pymavlink`.
+Docker-based demo that runs ArduCopter SITL and a Python thrust controller using `pymavlink`.
 
 ## Requirements
 
