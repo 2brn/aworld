@@ -1,8 +1,8 @@
 services:
-  gazebo_world:
+  aworld:
     build:
       context: .
-    container_name: gazebo_world
+    container_name: aworld
     network_mode: host
     environment:
       IN_DOCKER: "1"

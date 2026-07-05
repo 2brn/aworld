@@ -23,7 +23,7 @@ When run outside Docker, the script starts Compose. In the container it:
 ## Build image
 
 ```bash
-docker compose build gazebo_world
+docker compose build aworld
 ```
 
 Rebuild from scratch (no cache):
