@@ -1,0 +1,16 @@
+services:
+  gazebo_world:
+    build:
+      context: .
+    container_name: gazebo_world
+    network_mode: host
+    environment:
+      IN_DOCKER: "1"
+      PYTHONUNBUFFERED: "1"
+      DISPLAY: ${DISPLAY}
+    working_dir: /workspace
+    command: ["bash", "scripts/run-local.sh"]
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./src:/workspace/src
+      - ./scripts:/workspace/scripts
