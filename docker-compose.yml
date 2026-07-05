@@ -9,7 +9,7 @@ services:
       PYTHONUNBUFFERED: "1"
       DISPLAY: ${DISPLAY}
     working_dir: /workspace
-    command: ["bash", "scripts/run-local.sh"]
+    command: ["bash", "scripts/run.sh"]
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./src:/workspace/src

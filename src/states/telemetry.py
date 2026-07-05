@@ -14,6 +14,8 @@ class TelemetryReadState(BaseState):
         self.timeout_s = timeout_s
 
     def update(self, ctx: Context) -> None:
+        ctx.altitude_changed = False
+
         msg = ctx.master.recv_match(blocking=True, timeout=self.timeout_s)
         if msg is None:
             return

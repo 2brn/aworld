@@ -8,8 +8,6 @@ class StateMachine:
         self.phase_state = initial_state
 
     def update(self, ctx: Context) -> None:
-        ctx.altitude_changed = False
-        ctx.setpoint_altitude_m = None
         self.telemetry_state.update(ctx)
         self.phase_state.update(ctx)
         next_state = ctx.next_state

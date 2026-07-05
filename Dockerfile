@@ -34,4 +34,4 @@ COPY src /workspace/src
 COPY scripts /workspace/scripts
 RUN chmod +x /workspace/scripts/*.sh
 
-CMD ["bash", "scripts/run-local.sh"]
+CMD ["bash", "scripts/run.sh"]

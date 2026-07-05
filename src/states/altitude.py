@@ -48,20 +48,14 @@ class ReachAltitudeState(BaseState):
             self.last_thrust_send_at = now
 
             if now - self.last_status_log_at >= 1.0:
-                if self.hold_s is None:
-                    logger.info(
-                        "Altitude update: current=%.2fm target=%.2fm throttle=%.3f",
-                        ctx.altitude_m,
-                        self.target_altitude_rel_m,
-                        current_thrust,
-                    )
-                else:
-                    logger.info(
-                        "Hold update: current=%.2fm target=%.2fm throttle=%.3f",
-                        ctx.altitude_m,
-                        self.target_altitude_rel_m,
-                        current_thrust,
-                    )
+                status_label = "Hold" if self.hold_s is not None else "Altitude"
+                logger.info(
+                    "%s update: current=%.2fm target=%.2fm throttle=%.3f",
+                    status_label,
+                    ctx.altitude_m,
+                    self.target_altitude_rel_m,
+                    current_thrust,
+                )
                 self.last_status_log_at = now
 
         if self.hold_s is None:

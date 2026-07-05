@@ -11,7 +11,7 @@ Docker-based demo that runs ArduCopter SITL and a Python controller using `pymav
 
 ```bash
 cd /mnt/d/Code/gazebo-world
-./scripts/run-local.sh
+./scripts/run.sh
 ```
 
 When run outside Docker, the script starts Compose. In the container it:
