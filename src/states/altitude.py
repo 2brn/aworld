@@ -68,4 +68,5 @@ class ReachAltitudeState(BaseState):
                 logger.info("Hold complete %.1fm for %.1fs", self.target_altitude_rel_m, self.hold_s)
 
         if is_complete:
+            ctx.setpoint_altitude_m = None
             self.go_next(ctx)
